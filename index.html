@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Absensi Wajah</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero-panel">
+      <div>
+        <p class="eyebrow">Sistem Absensi</p>
+        <h1>Absensi Wajah Mahasiswa</h1>
+        <p class="hero-copy">Masukkan nama, aktifkan kamera, ambil foto, dan absen masuk dalam satu klik.</p>
+      </div>
+    </header>
+
+    <main class="content-grid">
+      <section class="card form-card">
+        <label class="field-label" for="studentName">Nama Mahasiswa</label>
+        <input id="studentName" type="text" placeholder="Tulis nama lengkap" autocomplete="name" />
+
+        <div class="button-group">
+          <button id="startCameraBtn" class="btn btn-primary" type="button">Aktifkan Kamera</button>
+          <button id="captureBtn" class="btn btn-secondary" type="button" disabled>Ambil Foto</button>
+        </div>
+
+        <button id="submitBtn" class="btn btn-submit" type="button" disabled>Absen Masuk</button>
+      </section>
+
+      <section class="card preview-card">
+        <div class="preview-header">
+          <h2>Preview Kamera</h2>
+          <span id="statusTag" class="status-tag">Menunggu kamera</span>
+        </div>
+
+        <div class="preview-shell">
+          <video id="cameraPreview" hidden autoplay muted playsinline></video>
+          <canvas id="captureCanvas" hidden></canvas>
+          <div id="photoPlaceholder" class="photo-placeholder">
+            <p>Preview akan muncul di sini</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
